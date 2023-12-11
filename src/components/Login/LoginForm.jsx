@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
 import preloader from '../images/preloader.gif'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {  ButtonForm, CenterDiv, Container, Fieldset, Form, FormDiv, Loader, Preloader } from "../Styled/Styled";
 import { URL } from "../../utils/Utils";
@@ -12,6 +12,7 @@ import { URL } from "../../utils/Utils";
 
 
 const LoginForm = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     password: ""
@@ -47,7 +48,7 @@ if (!formData.name) {
         localStorage.setItem("userDetails",JSON.stringify(result))
         
          swal("ALERT","Succesful Create","success")
-         window.location.href="/home"
+         navigate("/home")
 
         
       } catch (err) {
