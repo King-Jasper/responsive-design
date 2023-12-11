@@ -117,7 +117,8 @@ const data = {
   
         if (message.role=="USER") {
           swal('ALERT!', 'Update Succesfully Login with your new account', 'success');
-          window.location.href="/"
+          localStorage.clear()
+          window.location.replace("/")
         }
       } catch (err) {
         setLoading(false);
