@@ -79,7 +79,7 @@ const userDetails = JSON.parse(userDetailsString);
     };
 
     fetchData(); 
-  }, []); 
+  }, [userDetails.id]); 
 
   
 
